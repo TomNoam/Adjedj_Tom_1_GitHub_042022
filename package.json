@@ -1,0 +1,14 @@
+{
+  "name": "p3_adjedj_tom_042022",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile-sass": "sass --watch ./resources/style.scss ./css/style.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.50.1"
+  }
+}
