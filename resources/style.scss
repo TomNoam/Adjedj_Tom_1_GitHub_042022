@@ -1,6 +1,212 @@
-p {
-    color: rgb(0, 255, 21);
-    > span{
-        color: blue;
+// POLICES
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+$Roboto: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+
+@mixin Titles { 
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 25px;   
+}
+@mixin LowText {
+    font-size: 16px;
+    font-weight: 500;
+}
+// COLORS
+$Pcolor: #9356DC;
+$Scolor: #FF79DA;
+$Tcolor: #99E2D0;
+$lightGREY: rgba(173, 173, 173, 0.199);
+// GLOBAL
+@mixin Gcenter {
+    display: flex;
+    text-align: center;
+    justify-items: center;
+    justify-content: center;   
+}
+@mixin PaddingRL {
+    padding-left: 3%;
+    padding-right: 3%;
+}
+*
+{
+    font-family: $Roboto;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    letter-spacing: -0.03em;
+}
+body
+{
+    display: flex;
+    flex-direction: column;   
+}
+a
+{
+    text-decoration: none;
+}
+h2
+{
+    @include Titles;
+}
+h3
+{
+    font-weight: 600;
+    font-size: 15px;
+}
+p
+{
+    @include LowText;
+}
+
+// HEADER
+header
+{
+    flex-direction: column;
+    @include Gcenter;
+}
+.headLOGO
+{
+    @include Gcenter;
+    color: black;
+    padding-top: 15px;
+    padding-bottom: 5px;
+    font-family: shrikhand;
+    font-size: 28px;
+    background-color: white;
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.233);
+}
+.LOCALISATION
+{
+    @include Gcenter;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    color: rgba(0, 0, 0, 0.747);
+
+    background-color: rgba(173, 173, 173, 0.432);
+
+        .Ldot {
+            font-size: 14px;
+            padding-right: 40%;       
+        }
+
+        .textGPS{
+            font-size: 14px;
+            font-weight: 700;
+            position: absolute;
+        }
+}   
+.EXPLORE
+{
+    @include Gcenter;
+    flex-direction: column;
+    background-color: $lightGREY;
+    padding-top: 9%;
+    padding-bottom: 13%;
+    padding-left: 5%;
+    padding-right: 5%;
+        .titleheadsupp{
+            margin-top: 4%;
+            margin-bottom: 8%;
+            color: rgba(0, 0, 0, 0.568);
+        }
+        .exploreButton{
+            margin-right: auto;
+            margin-left: auto;
+            background: linear-gradient(to bottom right, #FF79DA ,#9356DC);
+            width: 70%;
+            height: 45px;
+            border-radius: 25px;
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.233) ;
+                .EBtext{
+                    display: flex;
+                    margin-top: 11px;
+                    @include Gcenter;             
+                    color: white;
+                }
+        }
+
+}
+.FONCTIONNEMENT
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 10%;
+    @include PaddingRL;
+    
+        .title2{
+            display: flex;
+            width: 100%;
+        }
+        .FoncButton{
+            display: flex;
+            align-items: center;
+            background-color: $lightGREY;
+            border-radius: 16px;
+            box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.137) ;
+            width: 94%;
+            height: 60px;
+            margin-top: 10%;
+            margin-left: 10px;
+                .Fnumb{
+                    position: absolute;
+                    color: white;
+                    font-size: 13px;
+                    margin-left: -11px;
+                    text-align: center;
+                    padding-top: 1px;
+                    background-color: $Pcolor;
+                    width: 22px;
+                    height: 22px;
+                    border-radius: 100%;
+                }
+                i{
+                    color: grey;
+                }
+                i,h3{
+                    margin-left: 10%;
+                }
+
     }
+}
+.RESTAURANT
+{
+    display: flex;
+    flex-direction: column;
+    background: $lightGREY;
+    margin-top: 50px;
+    padding-top: 45px;
+    @include PaddingRL;
+
+        .RCard{
+            background-color: white;
+            border-radius: 25px 25px 25px 25px;
+            width: 100%;
+            // height: 250px;
+            
+            // .NewMark
+
+            .ImagRCard{
+                height: 200px;
+                border-radius: 25px 25px 0 0;
+                overflow: hidden;
+                position: relative;
+                    img {
+                        position: absolute;
+                        object-fit:cover;
+                        width: 150%;
+                           
+                    }
+            }
+
+            .RbodyCard{
+        
+                display: flex;
+                flex-direction: column;
+
+
+            // .RlocCard
+            // .RheartCard
+            }
+        }
 }
