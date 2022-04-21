@@ -4,7 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 
 body {
@@ -23,13 +23,13 @@ h2 {
 }
 
 h3 {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 15px;
 }
 
 p {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 header {
@@ -75,16 +75,16 @@ header {
 }
 
 .EXPLORE {
+  padding-left: 5%;
+  padding-right: 5%;
   display: flex;
   text-align: center;
   justify-items: center;
   justify-content: center;
   flex-direction: column;
   background-color: rgba(173, 173, 173, 0.199);
-  padding-top: 9%;
-  padding-bottom: 13%;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-top: 35px;
+  padding-bottom: 50px;
 }
 .EXPLORE .titleheadsupp {
   margin-top: 4%;
@@ -102,11 +102,8 @@ header {
 }
 .EXPLORE .exploreButton .EBtext {
   display: flex;
-  margin-top: 11px;
-  display: flex;
-  text-align: center;
-  justify-items: center;
   justify-content: center;
+  padding-top: 12px;
   color: white;
 }
 
@@ -114,9 +111,13 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin-top: 10%;
-  padding-left: 3%;
-  padding-right: 3%;
+  margin-top: 35px;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.FONCTIONNEMENT a {
+  text-decoration: none;
+  color: inherit;
 }
 .FONCTIONNEMENT .title2 {
   display: flex;
@@ -130,7 +131,7 @@ header {
   box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.137);
   width: 94%;
   height: 60px;
-  margin-top: 10%;
+  margin-top: 25px;
   margin-left: 10px;
 }
 .FONCTIONNEMENT .FoncButton .Fnumb {
@@ -157,29 +158,111 @@ header {
   flex-direction: column;
   background: rgba(173, 173, 173, 0.199);
   margin-top: 50px;
-  padding-top: 45px;
-  padding-left: 3%;
-  padding-right: 3%;
+  padding-top: 35px;
+  padding-bottom: 30px;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.RESTAURANT .title2 {
+  margin-bottom: 7%;
+}
+.RESTAURANT a {
+  text-decoration: none;
+  color: inherit;
+}
+.RESTAURANT .NewMark {
+  display: flex;
+  position: absolute;
+  align-items: flex-end;
+  right: 3%;
+  margin-top: 15px;
+  margin-right: 15px;
+  width: 75px;
+  height: 25px;
+  z-index: 1;
+  background-color: #99e2d0;
+  color: #008766;
+  border-radius: 3px;
+  place-content: center;
+  place-items: center;
+  font-weight: 700;
+  font-size: small;
 }
 .RESTAURANT .RCard {
   background-color: white;
-  border-radius: 25px 25px 25px 25px;
+  border-radius: 15px;
   width: 100%;
+  height: 220px;
+  margin-bottom: 20px;
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.137);
 }
-.RESTAURANT .RCard .ImagRCard {
-  height: 200px;
-  border-radius: 25px 25px 0 0;
-  overflow: hidden;
+.RESTAURANT .RCard .photoRCard {
   position: relative;
+  height: 68%;
+  border-radius: 15px 15px 0 0;
+  overflow: hidden;
 }
-.RESTAURANT .RCard .ImagRCard img {
+.RESTAURANT .RCard .photoRCard img {
+  display: block;
   position: absolute;
   object-fit: cover;
-  width: 150%;
+  width: 100%;
+  top: -25%;
 }
-.RESTAURANT .RCard .RbodyCard {
+.RESTAURANT .RbodyCard {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+.RESTAURANT .RbodyCard .RnameCard {
+  width: 80%;
+  font-size: 18px;
+  font-weight: 700;
+}
+.RESTAURANT .RbodyCard .RlocCard {
+  width: 80%;
+  margin-top: 3px;
+}
+.RESTAURANT .RbodyCard .RheartCard {
+  position: absolute;
+  font-size: 150%;
+  right: 10%;
+  padding-top: 5px;
+  color: GREY;
+}
+
+footer {
   display: flex;
   flex-direction: column;
+  background-color: #353535;
+  color: white;
+  padding-left: 8%;
+  padding-bottom: 25px;
+}
+footer a {
+  text-decoration: none;
+  color: inherit;
+}
+footer .Flogo {
+  font-family: shrikhand;
+  font-size: 18px;
+  letter-spacing: 0.02em;
+  margin-top: 18px;
+  margin-bottom: 15px;
+}
+footer .Flist {
+  list-style: none;
+}
+footer li {
+  margin-bottom: 5px;
+}
+footer i {
+  font-size: 14px;
+  width: 17px;
+  height: 17px;
+  margin-right: 14px;
 }
 
 /*# sourceMappingURL=style.css.map */
