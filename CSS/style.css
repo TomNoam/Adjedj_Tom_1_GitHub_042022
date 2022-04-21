@@ -82,7 +82,7 @@ header {
   justify-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: rgba(173, 173, 173, 0.199);
+  background-color: #f6f6f6;
   padding-top: 35px;
   padding-bottom: 50px;
 }
@@ -126,7 +126,7 @@ header {
 .FONCTIONNEMENT .FoncButton {
   display: flex;
   align-items: center;
-  background-color: rgba(173, 173, 173, 0.199);
+  background-color: #f6f6f6;
   border-radius: 16px;
   box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.137);
   width: 94%;
@@ -156,7 +156,7 @@ header {
 .RESTAURANT {
   display: flex;
   flex-direction: column;
-  background: rgba(173, 173, 173, 0.199);
+  background: #f6f6f6;
   margin-top: 50px;
   padding-top: 35px;
   padding-bottom: 30px;
