@@ -32,6 +32,36 @@ p {
   font-weight: 600;
 }
 
+@keyframes heartGr {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  20% {
+    opacity: 0.2;
+    transform: scale(0.2);
+  }
+  60% {
+    opacity: 0.5;
+    transform: scale(0.5);
+  }
+  80% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.8;
+  }
+  95% {
+    transform: scale(1.05);
+  }
+  98% {
+    transform: scale(1.02);
+  }
+  100% {
+    opacity: 0.95;
+    transform: scale(1);
+  }
+}
 header {
   flex-direction: column;
   display: flex;
@@ -51,7 +81,6 @@ header {
   font-family: shrikhand;
   font-size: 28px;
   background-color: white;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.233);
 }
 
 .BackArrow {
@@ -98,10 +127,27 @@ header {
   align-items: flex-end;
 }
 .headR .Rname .Rheart {
+  cursor: pointer;
   display: flex;
   align-items: flex-end;
   font-size: 22px;
   transform: translate(0, -7px);
+}
+.headR .Rname .Rheart .fa-solid {
+  position: absolute;
+  opacity: 0;
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+.headR .Rname .Rheart .fa-regular {
+  z-index: -1;
+  opacity: 1;
+}
+.headR .Rname .Rheart :hover:not(.fa-regular) {
+  animation: heartGr 400ms;
+  animation-fill-mode: both;
 }
 
 .MENU {
@@ -115,6 +161,7 @@ header {
   font-size: 15px;
 }
 .MENU .choiceCARD {
+  cursor: pointer;
   display: flex;
   background-color: white;
   flex-wrap: wrap;
@@ -129,7 +176,7 @@ header {
   padding-bottom: 4%;
   padding-left: 3%;
   padding-right: 4%;
-  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.137);
+  box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.199);
 }
 .MENU .choiceCARD .choiceNAME {
   display: flex;
@@ -154,13 +201,17 @@ header {
   width: 55%;
   height: 45px;
   border-radius: 25px;
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.233);
+  box-shadow: 1px 3px 3px rgba(0, 0, 0, 0.199);
 }
 .MENU .commanderButton .CBtext {
   display: flex;
   justify-content: center;
   padding-top: 12px;
   color: white;
+}
+.MENU .commanderButton:hover {
+  box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.521);
+  background: linear-gradient(to bottom right, rgba(255, 121, 217, 0.862745098), rgba(146, 86, 220, 0.8470588235));
 }
 
 footer {

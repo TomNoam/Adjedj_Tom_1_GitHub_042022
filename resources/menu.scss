@@ -1,4 +1,4 @@
-// POLICES
+                                                    // POLICES
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 $Roboto: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
 
@@ -12,13 +12,16 @@ $Roboto: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, 
     font-weight: 600;
 }
 
-// COLORS
+                                                     // COLORS
 $Pcolor: #9356DC;
 $Scolor: #FF79DA;
 $Tcolor: #99E2D0;
 $lightGREY:#f6f6f6;
+$shadowLIGHT:rgba(0, 0, 0, 0.199);
+$shadowDARK: rgba(0, 0, 0, 0.521);
 
-// GLOBAL
+
+                                                       // GLOBAL
 @mixin Gcenter {
     display: flex;
     text-align: center;
@@ -59,7 +62,30 @@ p
 {
     @include LowText;
 }
-// HEADER
+                                                     // ANIMATIONS
+@keyframes heartGr {
+    0%{   opacity: 0;
+          transform: scale(0);
+    }
+    20%{  opacity: 0.2;
+          transform: scale(0.2);
+    }
+    60%{  opacity: 0.5;
+          transform: scale(0.5);
+    }
+    80%{  opacity: 0.7;
+    }
+    90%{  opacity: 0.8;
+    }
+    95%{  transform: scale(1.05);
+    }
+    98%{  transform:scale(1.02);
+    }
+    100%{ opacity: 0.95;
+          transform: scale(1);          
+    }
+}
+                                                          // HEADER
 header
 {
     flex-direction: column;
@@ -74,7 +100,6 @@ header
     font-family: shrikhand;
     font-size: 28px;
     background-color: white;
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.233);
 }
 .BackArrow
 {   
@@ -121,13 +146,31 @@ header
                     align-items: flex-end;
                 }
                 .Rheart{
+                    cursor: pointer;
                     display: flex;
                     align-items: flex-end;
                     font-size: 22px;
-                    transform: translate(0,-7px);
+                    transform: translate(0,-7px);                
+                        .fa-solid{
+                            position: absolute;                           
+                            opacity: 0;
+                            background: linear-gradient(to bottom right, #FF79DA ,#9356DC);
+                            background-clip: text;
+                            -webkit-background-clip: text; 
+                            color: transparent;    
+                        }
+                        .fa-regular{
+                            z-index: -1;
+                            opacity: 1;
+                        }
+                        :hover:not(.fa-regular){
+                            animation: heartGr 400ms;                            
+                            animation-fill-mode: both;                                           
+                        }                        
                 }
         }        
 }
+                                                       // MENU
 .MENU
 {
     background-color: $lightGREY;
@@ -140,6 +183,7 @@ header
             font-size: 15px;
         }
         .choiceCARD{
+            cursor: pointer;
             display: flex;
             background-color: white;
             flex-wrap: wrap;
@@ -154,14 +198,13 @@ header
             padding-bottom: 4%;
             padding-left: 3%;
             padding-right: 4%;
-            box-shadow: 1px 3px 6px rgba(0, 0, 0, 0.137) ;
+            box-shadow: 1px 3px 6px $shadowLIGHT;
 
                 .choiceNAME{
                     display: flex;
                     width: 100%;
                     font-weight: 700;
-                    font-size: 15px;
-                
+                    font-size: 15px;                
                 }
                 .choiceINFO{
                     font-size: 13px;
@@ -181,16 +224,22 @@ header
             width: 55%;
             height: 45px;
             border-radius: 25px;
-            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.233) ;
-
+            box-shadow: 1px 3px 3px $shadowLIGHT;
+                
                 .CBtext{
                     display: flex;
                     justify-content: center; 
                     padding-top: 12px;  
                     color: white;
                 }
+
+                &:hover{
+                    box-shadow: 1px 2px 6px $shadowDARK;
+                    background: linear-gradient(to bottom right, #ff79d9dc ,#9256dcd8);
+                }
         }
 }
+                                                       // FOOTER
 footer
 {
     display: flex;
