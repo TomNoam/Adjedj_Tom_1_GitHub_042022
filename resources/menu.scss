@@ -17,6 +17,8 @@ $Pcolor: #9356DC;
 $Scolor: #FF79DA;
 $Tcolor: #99E2D0;
 $lightGREY:#f6f6f6;
+$darkgreen:#008766;
+$lightgreen:#99e2d0;
 $shadowLIGHT:rgba(0, 0, 0, 0.199);
 $shadowDARK: rgba(0, 0, 0, 0.521);
 
@@ -31,6 +33,11 @@ $shadowDARK: rgba(0, 0, 0, 0.521);
 @mixin PaddingRL {
     padding-left: 5%;
     padding-right: 5%;
+}
+@mixin textHIDE {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 *
 {
@@ -83,6 +90,23 @@ p
     }
     100%{ opacity: 0.95;
           transform: scale(1);          
+    }
+}
+@keyframes menuPOS {
+    0%{
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    100%{
+        opacity: 100;            
+    }
+}
+@keyframes validANIM{
+    0%{
+        transform: translate(0px);
+    }
+    100%{
+        transform: translate(-70px);
     }
 }
                                                           // HEADER
@@ -177,43 +201,110 @@ header
 
         .choiceTITLE{
             margin-left: 6%;
-            margin-bottom: 20px;
+            margin-bottom: 5px;
             margin-top: 35px;
             font-weight: 500;
             font-size: 15px;
         }
         .choiceCARD{
+            
             cursor: pointer;
             display: flex;
             background-color: white;
-            flex-wrap: wrap;
             border-radius: 15px;
             width: 92%;
+            height: 70px;
             margin-left: 4%;
             margin-right: 4%;
             margin-top: 15px;
-            justify-content: space-between;
             align-content: center;
-            padding-top: 4%;
-            padding-bottom: 4%;
-            padding-left: 3%;
-            padding-right: 4%;
             box-shadow: 1px 3px 6px $shadowLIGHT;
+            overflow: hidden; 
+            .choiceBODY{    
+                width: 100%;
+                margin-top: auto;
+                margin-bottom: auto;
+                padding-left: 3%;
+                @include textHIDE;
 
                 .choiceNAME{
                     display: flex;
-                    width: 100%;
                     font-weight: 700;
-                    font-size: 15px;                
+                    font-size: 15px;
+                    @include textHIDE;                
                 }
-                .choiceINFO{
-                    font-size: 13px;
-                    font-weight: 500;
+                .choiceINFOLINE{
+                    display: flex;
+                    justify-content: space-between;
+                    
+                    .choiceINFO{
+                        font-size: 14px;
+                        font-weight: 500;
+                        @include textHIDE;
+                    }
+                    .choicePRICE{
+                        display: flex;                        
+                        font-weight: 700;
+                        font-size: 16px;
+                        padding-right: 10px;
+                        transform: translate(1px); 
+                    }
                 }
-                .choicePRICE{
-                    font-weight: 700;
-                    font-size: 16px;
+                &:hover + .Gvalid {
+                    animation: 1000ms validANIM ;
+                    animation-fill-mode: both;  
+                                 
                 }
+                &:hover + .Gvalid .validICONE {
+                    transition: all 1s;
+                    transform: rotate(360deg);
+                }
+                &:hover { .choicePRICE {
+                    animation: 1000ms validANIM ;
+                    animation-fill-mode: both;  
+                    }
+                }
+            }      
+            .Gvalid{
+                display: flex;
+                position: absolute;
+                right: -70px;
+                margin: 0;   
+                padding: 0;            
+                background-color: $lightgreen;
+                width: 70px;
+                height: 70px;             
+                    .validICONE{
+                        display: flex;
+                        margin: auto;
+                        width: 27px; 
+                        height: 27px;  
+                        border-radius: 100%;                         
+                        background-color: white;
+                        i{
+                            display: flex;
+                            color: $lightgreen;
+                            margin: auto;
+                            font-size: 19px;
+                        }
+                    }               
+                }            
+
+            animation: 1000ms menuPOS;
+            animation-fill-mode: both;
+                &.delay1{
+                    animation-delay: 300ms;
+                }
+                &.delay2{
+                    animation-delay: 400ms;
+                }
+                &.delay3{
+                    animation-delay: 500ms;
+                }
+                &.delay4{
+                    animation-delay: 600ms;
+                }
+            
         }
         .commanderButton{
             margin-top: 40px;
@@ -224,20 +315,24 @@ header
             width: 55%;
             height: 45px;
             border-radius: 25px;
-            box-shadow: 1px 3px 3px $shadowLIGHT;
-                
+            box-shadow: 1px 3px 3px $shadowLIGHT;                
                 .CBtext{
                     display: flex;
                     justify-content: center; 
                     padding-top: 12px;  
                     color: white;
                 }
-
                 &:hover{
                     box-shadow: 1px 2px 6px $shadowDARK;
                     background: linear-gradient(to bottom right, #ff79d9dc ,#9256dcd8);
                 }
         }
+}
+.greyline{
+    width: 37px;
+    height: 2px;
+    margin-left: 6%;
+    background-color: $lightgreen;
 }
                                                        // FOOTER
 footer

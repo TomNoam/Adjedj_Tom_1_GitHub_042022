@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "compile-sass": "sass --watch ./resources/style.scss ./css/style.css",
-    "compile-sass2": "sass --watch ./resources/menu.scss ./css/menu.css"
+    "compile-sass2": "sass --watch ./resources/menu.scss ./css/menu.css",
+    "compile-global": "sass --watch ./resources/global.scss ./css/global.css"
   },
   "author": "",
   "license": "ISC",
