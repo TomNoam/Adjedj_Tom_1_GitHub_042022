@@ -792,7 +792,7 @@ footer i {
 
 @media (min-width: 500px) {
   .EXPLORE .exploreButton {
-    width: 350px;
+    width: 250px;
   }
   .EXPLORE .titleheadsupp {
     margin-top: 25px;
@@ -891,8 +891,9 @@ footer i {
 
   nav {
     display: flex;
-    position: fixed;
-    width: 500px;
+    width: 400px;
+    margin-right: 50px;
+    margin-left: 50px;
     flex-direction: column;
   }
   nav .EXPLORE {
@@ -904,10 +905,8 @@ footer i {
   }
 
   .RESTAURANT {
-    position: block;
     width: 100%;
     margin-top: 0;
-    margin-left: 500px;
   }
   .RESTAURANT .title2 {
     width: 100%;
