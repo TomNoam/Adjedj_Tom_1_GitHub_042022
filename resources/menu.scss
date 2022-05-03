@@ -1,9 +1,7 @@
                                                     // POLICES
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 $Roboto: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
-
-// TODO remove unnecessary z-indexes
-
+                                                    
 @mixin Titles { 
     font-size: 22px;
     font-weight: 700;
@@ -111,7 +109,19 @@ p
         transform: translate(-70px);
     }
 }
+@keyframes validHIDE{
+    0%{
+        width: 100%;
+    }
+    100%{
+        width: 68%;
+    }
+}
                                                           // HEADER
+.bgPHOTOmenu
+{
+    display: none;
+}
 header
 {
     flex-direction: column;
@@ -143,9 +153,7 @@ header
     display: flex;
     flex-direction: column-reverse;
 
-        .MainPhoto{
-            position: relative;
-            overflow: hidden;
+        .MainPhoto{           
             img{
                 height: 250px;
                 width: 100%;
@@ -155,7 +163,6 @@ header
         .Rname {
             display: flex;
             position: absolute;
-            z-index: 2;
             justify-content: space-between;
             height: 70px;
             width: 100%;
@@ -186,7 +193,6 @@ header
                             color: transparent;    
                         }
                         .fa-regular{
-                            z-index: -1;
                             opacity: 1;
                         }
                         :hover:not(.fa-regular){
@@ -200,7 +206,7 @@ header
 .MENU
 {
     background-color: $lightGREY;
-
+    
         .choiceTITLE{
             margin-left: 6%;
             margin-bottom: 5px;
@@ -208,8 +214,7 @@ header
             font-weight: 500;
             font-size: 15px;
         }
-        .choiceCARD{
-            
+        .choiceCARD{            
             cursor: pointer;
             display: flex;
             background-color: white;
@@ -221,19 +226,19 @@ header
             margin-top: 15px;
             align-content: center;
             box-shadow: 1px 3px 6px $shadowLIGHT;
-            overflow: hidden; 
-            .choiceBODY{    
+            overflow: hidden;
+            
+            .choiceBODY{ 
+                flex-direction: row;   
                 width: 100%;
                 margin-top: auto;
                 margin-bottom: auto;
                 padding-left: 3%;
-                @include textHIDE;
-
+                transition: validANIM 1000ms ease-out;
                 .choiceNAME{
-                    display: flex;
                     font-weight: 700;
                     font-size: 15px;
-                    @include textHIDE;                
+                    @include textHIDE;               
                 }
                 .choiceINFOLINE{
                     display: flex;
@@ -242,15 +247,27 @@ header
                     .choiceINFO{
                         font-size: 14px;
                         font-weight: 500;
+                        width: 85%;
                         @include textHIDE;
                     }
                     .choicePRICE{
-                        display: flex;                        
+                        display: flex;
+                        position: absolute;
+                        right: 5px;                        
                         font-weight: 700;
                         font-size: 16px;
                         padding-right: 10px;
                         transform: translate(1px); 
                     }
+                }
+                &:hover {.choiceINFOLINE{
+                    animation: 1s validHIDE;
+                    animation-fill-mode: both;  
+                    }
+                    .choiceNAME{
+                        animation: 1s validHIDE;
+                        animation-fill-mode: both;  
+                        }
                 }
                 &:hover + .Gvalid {
                     animation: 1000ms validANIM ;
@@ -266,8 +283,13 @@ header
                     animation-fill-mode: both;  
                     }
                 }
+                &:hover { .BOXinvi {
+                    animation: 1000ms validANIM ;
+                    animation-fill-mode: both;
+                    }
+                }                              
             }      
-            .Gvalid{
+            .Gvalid{               
                 display: flex;
                 position: absolute;
                 right: -70px;
@@ -275,7 +297,7 @@ header
                 padding: 0;            
                 background-color: $lightgreen;
                 width: 70px;
-                height: 70px;             
+                height: 70px;      
                     .validICONE{
                         display: flex;
                         margin: auto;
@@ -306,7 +328,6 @@ header
                 &.delay4{
                     animation-delay: 600ms;
                 }
-            
         }
         .commanderButton{
             margin-top: 40px;

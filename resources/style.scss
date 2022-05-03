@@ -63,7 +63,6 @@ p
     @include LowText;
 }
 //LOADING
-
 $anim-dur: 750ms;
 $anim-delay: calc($anim-dur / 8);
 $numb-letters: 8;
@@ -95,6 +94,7 @@ $numb-letters: 8;
 @keyframes LOADING_out {
     0% {
         opacity: 100%;
+        z-index: 10;
     }
     80% {
         opacity: 100;
@@ -102,40 +102,40 @@ $numb-letters: 8;
     90% {
         opacity: 50%;
     }
+    99%{
+        z-index: 10;
+    }
     100% {
         opacity: 0%;
+        z-index:-3;
     }
 }
-
 
 // LOADING
 .LOADING
 {
+    z-index:-3;
     display: flex;
     position: fixed;
     background-color: white;
     width: 100%;
     height: 100%;
-    z-index: 4;
     justify-content: center;
     animation: 3000ms LOADING_out;
     animation-fill-mode: forwards;
-
 
         .Ltext{
             display: flex;            
             top: 0%;
             
             .loadLetter{
-                z-index: 6;
                 display: flex;
                 position: relative;
                 font-family: Shrikhand;
                 font-size: 40px;
                 animation: letterScale $anim-dur forwards infinite alternate-reverse ;
                 text-shadow: 2px 1px 10px #3b2557;
-                
-                
+                                
                 @for $i from 1 through 8 {
                     &--#{$i} {
                         animation-delay: $anim-delay * $i;
@@ -144,7 +144,6 @@ $numb-letters: 8;
         }
         .spin {
             top: 40%;
-            z-index: 5;
             position: absolute;
             border: 12px solid #000000;
             border-radius: 50%;
@@ -211,7 +210,7 @@ header
 
         .Ldot {
             font-size: 14px;
-            padding-right: 40%;       
+            padding-right: 150px;       
         }
         .textGPS{
             font-size: 14px;
@@ -332,7 +331,7 @@ header
             margin-right: 15px;
             width: 75px;
             height: 25px;
-            z-index: 1;
+            z-index: 3;
             background-color: $lightgreen;
             color: $darkgreen;
             border-radius: 3px;
@@ -367,7 +366,6 @@ header
                 }   
         }        
         .RbodyCard{
-            z-index: 4;
             display: flex;
             flex-wrap: wrap;
             padding-bottom: 10px;
@@ -384,7 +382,6 @@ header
             }            
             .RheartCard{
                 color: GREY;
-                z-index: 5;
                 position: absolute;
                 cursor: pointer;
                 display: flex;
@@ -401,7 +398,6 @@ header
                         color: transparent;    
                     }
                     .fa-regular{
-                        z-index: 4;
                         opacity: 1;
                     }
                     :hover:not(.fa-regular){

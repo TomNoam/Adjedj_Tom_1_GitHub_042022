@@ -80,6 +80,18 @@ p {
     transform: translate(-70px);
   }
 }
+@keyframes validHIDE {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 68%;
+  }
+}
+.bgPHOTOmenu {
+  display: none;
+}
+
 header {
   flex-direction: column;
   display: flex;
@@ -116,10 +128,6 @@ header {
   display: flex;
   flex-direction: column-reverse;
 }
-.headR .MainPhoto {
-  position: relative;
-  overflow: hidden;
-}
 .headR .MainPhoto img {
   height: 250px;
   width: 100%;
@@ -128,7 +136,6 @@ header {
 .headR .Rname {
   display: flex;
   position: absolute;
-  z-index: 2;
   justify-content: space-between;
   height: 70px;
   width: 100%;
@@ -160,7 +167,6 @@ header {
   color: transparent;
 }
 .headR .Rname .Rheart .fa-regular {
-  z-index: -1;
   opacity: 1;
 }
 .headR .Rname .Rheart :hover:not(.fa-regular) {
@@ -195,16 +201,14 @@ header {
   animation-fill-mode: both;
 }
 .MENU .choiceCARD .choiceBODY {
+  flex-direction: row;
   width: 100%;
   margin-top: auto;
   margin-bottom: auto;
   padding-left: 3%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  transition: validANIM 1000ms ease-out;
 }
 .MENU .choiceCARD .choiceBODY .choiceNAME {
-  display: flex;
   font-weight: 700;
   font-size: 15px;
   white-space: nowrap;
@@ -218,16 +222,27 @@ header {
 .MENU .choiceCARD .choiceBODY .choiceINFOLINE .choiceINFO {
   font-size: 14px;
   font-weight: 500;
+  width: 85%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .MENU .choiceCARD .choiceBODY .choiceINFOLINE .choicePRICE {
   display: flex;
+  position: absolute;
+  right: 5px;
   font-weight: 700;
   font-size: 16px;
   padding-right: 10px;
   transform: translate(1px);
+}
+.MENU .choiceCARD .choiceBODY:hover .choiceINFOLINE {
+  animation: 1s validHIDE;
+  animation-fill-mode: both;
+}
+.MENU .choiceCARD .choiceBODY:hover .choiceNAME {
+  animation: 1s validHIDE;
+  animation-fill-mode: both;
 }
 .MENU .choiceCARD .choiceBODY:hover + .Gvalid {
   animation: 1000ms validANIM;
@@ -238,6 +253,10 @@ header {
   transform: rotate(360deg);
 }
 .MENU .choiceCARD .choiceBODY:hover .choicePRICE {
+  animation: 1000ms validANIM;
+  animation-fill-mode: both;
+}
+.MENU .choiceCARD .choiceBODY:hover .BOXinvi {
   animation: 1000ms validANIM;
   animation-fill-mode: both;
 }
@@ -398,6 +417,7 @@ p {
 @keyframes LOADING_out {
   0% {
     opacity: 100%;
+    z-index: 10;
   }
   80% {
     opacity: 100;
@@ -405,17 +425,21 @@ p {
   90% {
     opacity: 50%;
   }
+  99% {
+    z-index: 10;
+  }
   100% {
     opacity: 0%;
+    z-index: -3;
   }
 }
 .LOADING {
+  z-index: -3;
   display: flex;
   position: fixed;
   background-color: white;
   width: 100%;
   height: 100%;
-  z-index: 4;
   justify-content: center;
   animation: 3000ms LOADING_out;
   animation-fill-mode: forwards;
@@ -425,7 +449,6 @@ p {
   top: 0%;
 }
 .LOADING .Ltext .loadLetter {
-  z-index: 6;
   display: flex;
   position: relative;
   font-family: Shrikhand;
@@ -459,7 +482,6 @@ p {
 }
 .LOADING .spin {
   top: 40%;
-  z-index: 5;
   position: absolute;
   border: 12px solid #000000;
   border-radius: 50%;
@@ -539,7 +561,7 @@ header {
 }
 .LOCALISATION .Ldot {
   font-size: 14px;
-  padding-right: 40%;
+  padding-right: 150px;
 }
 .LOCALISATION .textGPS {
   font-size: 14px;
@@ -661,7 +683,7 @@ header {
   margin-right: 15px;
   width: 75px;
   height: 25px;
-  z-index: 1;
+  z-index: 3;
   background-color: #99e2d0;
   color: #008766;
   border-radius: 3px;
@@ -695,7 +717,6 @@ header {
   background-color: rgba(146, 86, 220, 0.2117647059);
 }
 .RESTAURANT .RbodyCard {
-  z-index: 4;
   display: flex;
   flex-wrap: wrap;
   padding-bottom: 10px;
@@ -713,7 +734,6 @@ header {
 }
 .RESTAURANT .RbodyCard .RheartCard {
   color: GREY;
-  z-index: 5;
   position: absolute;
   cursor: pointer;
   display: flex;
@@ -731,7 +751,6 @@ header {
   color: transparent;
 }
 .RESTAURANT .RbodyCard .RheartCard .fa-regular {
-  z-index: 4;
   opacity: 1;
 }
 .RESTAURANT .RbodyCard .RheartCard :hover:not(.fa-regular) {
@@ -769,6 +788,130 @@ footer i {
   width: 17px;
   height: 17px;
   margin-right: 14px;
+}
+
+@media (min-width: 500px) {
+  .EXPLORE .exploreButton {
+    width: 350px;
+  }
+  .EXPLORE .titleheadsupp {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+
+  .FONCTIONNEMENT .title2 {
+    width: auto;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .FONCTIONNEMENT .FoncButton {
+    margin-right: auto;
+    margin-left: auto;
+    width: 300px;
+  }
+
+  .RESTAURANT .title2 {
+    width: auto;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 35px;
+  }
+  .RESTAURANT .RCard .photoRCard img {
+    top: none;
+    object-fit: fill;
+  }
+  .RESTAURANT .RbodyCard {
+    padding-left: 30px;
+  }
+
+  footer {
+    padding-left: 0;
+  }
+  footer .Flogo {
+    margin-right: auto;
+    margin-left: auto;
+  }
+  footer .Flist {
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+
+  .bgPHOTOmenu {
+    display: flex;
+    position: fixed;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+  }
+  .bgPHOTOmenu img {
+    width: 100%;
+    overflow: hidden;
+    object-fit: cover;
+  }
+
+  .headR {
+    margin-right: auto;
+    margin-left: auto;
+    width: 440px;
+    margin-top: 120px;
+  }
+  .headR .MainPhoto {
+    display: none;
+  }
+  .headR .Rname {
+    z-index: 1;
+    right: auto;
+    left: auto;
+    align-content: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    width: 440px;
+  }
+
+  .MENU {
+    border-radius: 0px 0px 35px 35px;
+    overflow: hidden;
+    width: 440px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 50px;
+  }
+  .MENU .choiceCARD {
+    width: 400px;
+  }
+  .MENU .commanderButton {
+    margin-bottom: 40px;
+  }
+}
+@media (min-width: 900px) {
+  .BOXdesktop {
+    display: flex;
+  }
+
+  nav {
+    display: flex;
+    position: fixed;
+    width: 500px;
+    flex-direction: column;
+  }
+  nav .EXPLORE {
+    background-color: white;
+    margin-top: 50px;
+  }
+  nav .FONCTIONNEMENT {
+    margin-top: 30px;
+  }
+
+  .RESTAURANT {
+    position: block;
+    width: 100%;
+    margin-top: 0;
+    margin-left: 500px;
+  }
+  .RESTAURANT .title2 {
+    width: 100%;
+  }
 }
 
 /*# sourceMappingURL=index.css.map */
