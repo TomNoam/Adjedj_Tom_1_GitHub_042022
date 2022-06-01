@@ -101,22 +101,6 @@ p
         opacity: 100;            
     }
 }
-@keyframes validANIM{
-    0%{
-        transform: translate(0px);
-    }
-    100%{
-        transform: translate(-70px);
-    }
-}
-@keyframes validHIDE{
-    0%{
-        width: 100%;
-    }
-    100%{
-        width: 68%;
-    }
-}
                                                           // HEADER
 .bgPHOTOmenu
 {
@@ -196,7 +180,7 @@ header
                             opacity: 1;
                         }
                         :hover:not(.fa-regular){
-                            animation: heartGr 400ms;                            
+                            animation: heartGr 300ms;                            
                             animation-fill-mode: both;                                           
                         }                        
                 }
@@ -228,76 +212,55 @@ header
             box-shadow: 1px 3px 6px $shadowLIGHT;
             overflow: hidden;
             
-            .choiceBODY{ 
-                flex-direction: row;   
-                width: 100%;
+            .choiceBODY{
+                display: flex;
+                width: 100%; 
+                padding-left: 3%;
                 margin-top: auto;
                 margin-bottom: auto;
-                padding-left: 3%;
-                transition: validANIM 1000ms ease-out;
+                flex-direction: column;
+                transition: width 1s;
+           
                 .choiceNAME{
                     font-weight: 700;
                     font-size: 15px;
+                    width: 100%;
                     @include textHIDE;               
                 }
                 .choiceINFOLINE{
                     display: flex;
+                    width: 100%;                                      
                     justify-content: space-between;
-                    
+
                     .choiceINFO{
                         font-size: 14px;
                         font-weight: 500;
-                        width: 85%;
                         @include textHIDE;
                     }
                     .choicePRICE{
                         display: flex;
-                        position: absolute;
-                        right: 5px;                        
+                        width: 40px;
+                        right: 0px;                 
                         font-weight: 700;
                         font-size: 16px;
                         padding-right: 10px;
-                        transform: translate(1px); 
+                        margin-left: 5px;
+                        transform: translate(0px);
+                        transition: transform 1s;                         
                     }
                 }
-                &:hover {.choiceINFOLINE{
-                    animation: 1s validHIDE;
-                    animation-fill-mode: both;  
-                    }
-                    .choiceNAME{
-                        animation: 1s validHIDE;
-                        animation-fill-mode: both;  
-                        }
-                }
-                &:hover + .Gvalid {
-                    animation: 1000ms validANIM ;
-                    animation-fill-mode: both;  
-                                 
-                }
-                &:hover + .Gvalid .validICONE {
-                    transition: all 1s;
-                    transform: rotate(360deg);
-                }
-                &:hover { .choicePRICE {
-                    animation: 1000ms validANIM ;
-                    animation-fill-mode: both;  
-                    }
-                }
-                &:hover { .BOXinvi {
-                    animation: 1000ms validANIM ;
-                    animation-fill-mode: both;
-                    }
-                }                              
             }      
             .Gvalid{               
                 display: flex;
-                position: absolute;
                 right: -70px;
+                position: absolute;
+                transform: translate(0px);
+                transition: transform 1s;  
                 margin: 0;   
                 padding: 0;            
                 background-color: $lightgreen;
                 width: 70px;
-                height: 70px;      
+                height: 70px;    
                     .validICONE{
                         display: flex;
                         margin: auto;
@@ -312,7 +275,7 @@ header
                             font-size: 19px;
                         }
                     }               
-                }            
+                }         
 
             animation: 1000ms menuPOS;
             animation-fill-mode: both;
@@ -329,6 +292,7 @@ header
                     animation-delay: 600ms;
                 }
         }
+
         .commanderButton{
             margin-top: 40px;
             margin-bottom: 70px;
@@ -350,6 +314,17 @@ header
                     background: linear-gradient(to bottom right, #ff79d9dc ,#9256dcd8);
                 }
         }
+}
+
+.choiceCARD:hover > .Gvalid {
+    transform: translate(-70px);
+}
+.choiceCARD:hover > .choiceBODY {
+    width: 75%;
+}
+.choiceCARD:hover > .Gvalid .validICONE {
+    transition: all 1s;
+    transform: rotate(360deg);
 }
 .greyline{
     width: 37px;

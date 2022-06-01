@@ -72,22 +72,6 @@ p {
     opacity: 100;
   }
 }
-@keyframes validANIM {
-  0% {
-    transform: translate(0px);
-  }
-  100% {
-    transform: translate(-70px);
-  }
-}
-@keyframes validHIDE {
-  0% {
-    width: 100%;
-  }
-  100% {
-    width: 68%;
-  }
-}
 .bgPHOTOmenu {
   display: none;
 }
@@ -170,7 +154,7 @@ header {
   opacity: 1;
 }
 .headR .Rname .Rheart :hover:not(.fa-regular) {
-  animation: heartGr 400ms;
+  animation: heartGr 300ms;
   animation-fill-mode: both;
 }
 
@@ -201,69 +185,51 @@ header {
   animation-fill-mode: both;
 }
 .MENU .choiceCARD .choiceBODY {
-  flex-direction: row;
+  display: flex;
   width: 100%;
+  padding-left: 3%;
   margin-top: auto;
   margin-bottom: auto;
-  padding-left: 3%;
-  transition: validANIM 1000ms ease-out;
+  flex-direction: column;
+  transition: width 1s;
 }
 .MENU .choiceCARD .choiceBODY .choiceNAME {
   font-weight: 700;
   font-size: 15px;
+  width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .MENU .choiceCARD .choiceBODY .choiceINFOLINE {
   display: flex;
+  width: 100%;
   justify-content: space-between;
 }
 .MENU .choiceCARD .choiceBODY .choiceINFOLINE .choiceINFO {
   font-size: 14px;
   font-weight: 500;
-  width: 85%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 .MENU .choiceCARD .choiceBODY .choiceINFOLINE .choicePRICE {
   display: flex;
-  position: absolute;
-  right: 5px;
+  width: 40px;
+  right: 0px;
   font-weight: 700;
   font-size: 16px;
   padding-right: 10px;
-  transform: translate(1px);
-}
-.MENU .choiceCARD .choiceBODY:hover .choiceINFOLINE {
-  animation: 1s validHIDE;
-  animation-fill-mode: both;
-}
-.MENU .choiceCARD .choiceBODY:hover .choiceNAME {
-  animation: 1s validHIDE;
-  animation-fill-mode: both;
-}
-.MENU .choiceCARD .choiceBODY:hover + .Gvalid {
-  animation: 1000ms validANIM;
-  animation-fill-mode: both;
-}
-.MENU .choiceCARD .choiceBODY:hover + .Gvalid .validICONE {
-  transition: all 1s;
-  transform: rotate(360deg);
-}
-.MENU .choiceCARD .choiceBODY:hover .choicePRICE {
-  animation: 1000ms validANIM;
-  animation-fill-mode: both;
-}
-.MENU .choiceCARD .choiceBODY:hover .BOXinvi {
-  animation: 1000ms validANIM;
-  animation-fill-mode: both;
+  margin-left: 5px;
+  transform: translate(0px);
+  transition: transform 1s;
 }
 .MENU .choiceCARD .Gvalid {
   display: flex;
-  position: absolute;
   right: -70px;
+  position: absolute;
+  transform: translate(0px);
+  transition: transform 1s;
   margin: 0;
   padding: 0;
   background-color: #99e2d0;
@@ -316,6 +282,19 @@ header {
 .MENU .commanderButton:hover {
   box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.521);
   background: linear-gradient(to bottom right, rgba(255, 121, 217, 0.862745098), rgba(146, 86, 220, 0.8470588235));
+}
+
+.choiceCARD:hover > .Gvalid {
+  transform: translate(-70px);
+}
+
+.choiceCARD:hover > .choiceBODY {
+  width: 75%;
+}
+
+.choiceCARD:hover > .Gvalid .validICONE {
+  transition: all 1s;
+  transform: rotate(360deg);
 }
 
 .greyline {
@@ -835,6 +814,10 @@ footer i {
     margin-right: auto;
     margin-left: auto;
     text-align: center;
+  }
+
+  .choiceCARD:hover > .choiceBODY {
+    width: 82%;
   }
 
   .bgPHOTOmenu {
