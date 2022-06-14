@@ -56,15 +56,15 @@ a
 {
     text-decoration: none;
 }
-h2
-{
-    @include Titles;
-}
-h3
-{
-    font-weight: 700;
-    font-size: 15px;
-}
+// h1
+// {
+//     @include Titles;
+// }
+// h1
+// {
+//     font-weight: 700;
+//     font-size: 15px;
+// }
 p
 {
     @include LowText;
@@ -308,6 +308,8 @@ header
                     justify-content: center; 
                     padding-top: 12px;  
                     color: white;
+                    font-weight: 700;
+                    font-size: 15px;
                 }
                 &:hover{
                     box-shadow: 1px 2px 6px $shadowDARK;

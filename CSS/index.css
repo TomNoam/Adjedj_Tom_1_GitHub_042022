@@ -17,17 +17,6 @@ a {
   text-decoration: none;
 }
 
-h2 {
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 25px;
-}
-
-h3 {
-  font-weight: 700;
-  font-size: 15px;
-}
-
 p {
   font-size: 16px;
   font-weight: 600;
@@ -278,6 +267,8 @@ header {
   justify-content: center;
   padding-top: 12px;
   color: white;
+  font-weight: 700;
+  font-size: 15px;
 }
 .MENU .commanderButton:hover {
   box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.521);
@@ -353,13 +344,13 @@ a {
   text-decoration: none;
 }
 
-h2 {
+h1 {
   font-size: 22px;
   font-weight: 700;
   line-height: 25px;
 }
 
-h3 {
+h2 {
   font-weight: 700;
   font-size: 15px;
 }
@@ -579,6 +570,8 @@ header {
   justify-content: center;
   padding-top: 12px;
   color: white;
+  font-weight: 700;
+  font-size: 15px;
 }
 .EXPLORE .exploreButton:hover {
   box-shadow: 1px 2px 6px rgba(0, 0, 0, 0.521);
@@ -627,7 +620,7 @@ header {
 .FONCTIONNEMENT .FoncButton i {
   color: grey;
 }
-.FONCTIONNEMENT .FoncButton i, .FONCTIONNEMENT .FoncButton h3 {
+.FONCTIONNEMENT .FoncButton i, .FONCTIONNEMENT .FoncButton h2 {
   margin-left: 10%;
 }
 .FONCTIONNEMENT .FoncButton:hover {

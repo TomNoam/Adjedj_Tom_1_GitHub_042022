@@ -49,11 +49,11 @@ a
 {
     text-decoration: none;
 }
-h2
+h1
 {
     @include Titles;
 }
-h3
+h2
 {
     font-weight: 700;
     font-size: 15px;
@@ -245,6 +245,8 @@ header
                     justify-content: center; 
                     padding-top: 12px;  
                     color: white;
+                    font-weight: 700;
+                    font-size: 15px;
                 }
 
                 &:hover{
@@ -295,7 +297,7 @@ header
                 i{
                     color: grey;
                 }
-                i,h3{
+                i,h2{
                     margin-left: 10%;
                 }
                 &:hover{
